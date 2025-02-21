@@ -1,5 +1,7 @@
 package com.springboot.blog.config;
 
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +21,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+// to pass JWT authentication
+//@SecurityScheme(
+//        name = "Bearer Authentication",
+//        type = SecuritySchemeType.HTTP,
+//        bearerFormat="JWT",
+//        scheme = "bearer"
+//)
+
 @Configuration
 @EnableMethodSecurity
+@SecurityScheme(
+        name = "BasicAuth",
+        type = SecuritySchemeType.HTTP,
+        scheme = "basic"
+)
 public class SecurityConfig {
 
     private UserDetailsService userDetailsService;

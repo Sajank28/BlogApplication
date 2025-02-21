@@ -28,7 +28,7 @@ import org.springframework.context.annotation.Bean;
 		),
 		externalDocs = @ExternalDocumentation(
 				description = "Spring Boot Blog App documentation",
-				url=""
+				url="https://github.com/Sajank28/BlogApplication"
 		)
 )
 public class BlogApplication {
